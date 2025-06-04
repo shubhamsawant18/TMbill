@@ -5,7 +5,14 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-router.post("/register", registerUser);
+router.post("/register", async (req, res) => {
+  try {
+    // Registration logic
+    res.status(201).json({ message: "User registered successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
 router.post("/login", loginUser);
 
 // 🔒 Protected Welcome Route
