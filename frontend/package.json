@@ -15,7 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+  "start": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\""
+,
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
