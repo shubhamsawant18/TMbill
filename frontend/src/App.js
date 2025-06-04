@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./pages/Navbar"; // Corrected import path
-import Login from "./pages/Login";
+import Navbar from "./pages/Navbar";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 import Welcome from "./pages/Welcome";
 
 function App() {
@@ -9,8 +9,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Register />} />  {/* Default Page */}
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<Welcome />} />
       </Routes>
     </Router>

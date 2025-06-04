@@ -22,8 +22,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">
         <Link to="/">
-          <img src="/image/logo-chanel.png" alt="Logo" width={50} height={44} />
-        </Link>
+<img src="images/logo-chanel.png" alt="Logo" width={50} height={44} />
+</Link>
         <span className="brand-name">SNAPCART</span>
       </div>
 
