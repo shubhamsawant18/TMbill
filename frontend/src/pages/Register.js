@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Register.css"; // Link to the CSS file
+import "../styles/Register.css"; // Linking CSS file
 
 const Register = () => {
   const navigate = useNavigate();
@@ -37,44 +37,47 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <h2 className="register-header">Sign Up</h2>
-      <p className="register-text">Join us today!</p>
-      <form onSubmit={handleSignup}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={signupData.username}
-          onChange={(e) =>
-            setSignupData({ ...signupData, username: e.target.value })
-          }
-          className="register-input"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={signupData.email}
-          onChange={(e) =>
-            setSignupData({ ...signupData, email: e.target.value })
-          }
-          className="register-input"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={signupData.password}
-          onChange={(e) =>
-            setSignupData({ ...signupData, password: e.target.value })
-          }
-          className="register-input"
-          required
-        />
-        <button type="submit" className="register-button">
-          Sign Up
-        </button>
-      </form>
+    <div className="register-page">
+      <img src="/images/loginbg.jpg" alt="Background" className="background-image" />
+      <div className="register-container">
+        <h2 className="register-header">Sign Up</h2>
+        <p className="register-text">Join us today!</p>
+        <form onSubmit={handleSignup}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={signupData.username}
+            onChange={(e) =>
+              setSignupData({ ...signupData, username: e.target.value })
+            }
+            className="register-input"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={signupData.email}
+            onChange={(e) =>
+              setSignupData({ ...signupData, email: e.target.value })
+            }
+            className="register-input"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={signupData.password}
+            onChange={(e) =>
+              setSignupData({ ...signupData, password: e.target.value })
+            }
+            className="register-input"
+            required
+          />
+          <button type="submit" className="register-button">
+            Sign Up
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

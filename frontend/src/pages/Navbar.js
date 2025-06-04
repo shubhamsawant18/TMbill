@@ -33,9 +33,9 @@ const Navbar = () => {
 
       <div className={`nav-section ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
+          <li><Link to="/register">Home</Link></li>
+          <li><Link to="/products">About us</Link></li>
+          <li><Link to="/cart">Contact us</Link></li>
         </ul>
 
         <div className="auth-buttons">
