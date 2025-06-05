@@ -10,31 +10,29 @@ const Login = () => {
   });
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:5000/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-      });
+  try {
+    const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loginData),
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (response.ok) {
-        alert("Login successful");
-        localStorage.setItem("token", data.token);
-        navigate("/welcome");
-      } else {
-        alert(data.message || "Invalid credentials. Please try again.");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      alert("Something went wrong. Please try again.");
+    if (response.ok) {
+      alert("Login successful");
+      localStorage.setItem("token", data.token); // ✅ Save authentication token
+      window.location.href = "/welcome"; // ✅ Redirect & ensure Navbar updates
+    } else {
+      alert(data.message || "Invalid credentials. Please try again.");
     }
-  };
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
 
   return (
     <div className="login-page">
