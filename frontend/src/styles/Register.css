@@ -5,54 +5,54 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 100px; 
+  padding-top: 100px;
   box-sizing: border-box;
   overflow: auto;
 }
 
 .background-image {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: blur(1px); 
+  filter: blur(1px);
 }
 
 .register-container {
   z-index: 1;
-  width: 100%;
-  max-width: 320px;
+  width: 90%;
+  max-width: 360px;
   padding: 30px 25px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
-  backdrop-filter: saturate(180%) blur(8px); 
+  backdrop-filter: saturate(180%) blur(8px);
 }
 
 .register-header {
-  font-size: 26px;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
 }
 
 .register-text {
-  font-size: 16px;
+  font-size: 1rem;
   color: #666;
   margin-bottom: 25px;
 }
 
 .register-input {
-  width: 90%;
+  width: 100%;
   padding: 12px;
   margin-bottom: 18px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
@@ -76,4 +76,29 @@
 
 .register-button:hover {
   background-color: #218838;
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .register-header {
+    font-size: 1.4rem;
+  }
+
+  .register-text {
+    font-size: 0.95rem;
+  }
+
+  .register-input {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .register-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
 }
