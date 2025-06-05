@@ -8,7 +8,6 @@ const router = express.Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 
-// 🔒 Protected Welcome Route
 router.get("/welcome", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id);

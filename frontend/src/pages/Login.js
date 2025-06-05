@@ -23,8 +23,8 @@ const Login = () => {
 
     if (response.ok) {
       alert("Login successful");
-      localStorage.setItem("token", data.token); // ✅ Save authentication token
-      window.location.href = "/welcome"; // ✅ Redirect & ensure Navbar updates
+      localStorage.setItem("token", data.token);
+      window.location.href = "/welcome"; 
     } else {
       alert(data.message || "Invalid credentials. Please try again.");
     }

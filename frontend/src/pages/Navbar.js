@@ -4,19 +4,19 @@ import "../styles/Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const location = useLocation(); // ✅ Get current route
+  const location = useLocation(); 
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // ✅ Keep login state updated when navigating
-  }, [location]); // ✅ Updates when URL changes
+    setIsLoggedIn(!!token); 
+  }, [location]); 
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // ✅ Remove stored token
-    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/"; // ✅ Clears authentication cookie
+    localStorage.removeItem("token"); 
+    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/"; 
     setIsLoggedIn(false);
-    navigate("/login"); // ✅ Redirect after logout
+    navigate("/login"); 
   };
 
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
       </div>
 
       <div className="auth-buttons">
-        {isLoggedIn && location.pathname === "/welcome" ? ( // ✅ Show Logout ONLY on Welcome Page
+        {isLoggedIn && location.pathname === "/welcome" ? ( 
           <button
             className="logout-btn"
             onClick={handleLogout}
