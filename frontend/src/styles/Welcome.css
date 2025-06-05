@@ -1,0 +1,54 @@
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-box h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px #00000040;
+}
+
+.welcome-box p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-box h1 {
+    font-size: 1.8rem;
+  }
+  .welcome-box p {
+    font-size: 1rem;
+  }
+}
